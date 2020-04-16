@@ -29,7 +29,7 @@ mvn install
 
 Note: once running the ```mvn install``` command a war package will be created in a folder named ```target```.
 
-The war package can be easily deployed onto glassfish using the web ui.
+The war package can be easily deployed onto glassfish using the glassfish admin web interface.
 
 ## Other notes
 - pom.xml contains maven build configurations
