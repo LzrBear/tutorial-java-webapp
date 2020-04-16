@@ -4,41 +4,59 @@
   <artifactId>csv-extract-web-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+      <properties>
+        <jersey2.version>2.19</jersey2.version>
+        <jaxrs.version>2.0.1</jaxrs.version>
+    </properties>
   <build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-				<source>1.6</source>
-				<target>1.6</target>
+				<source>1.8</source>
+				<target>1.8</target>
 				</configuration>
 			</plugin>
-
-			<!-- <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>2.1.1</version>
-            <configuration>
-                <webResources>
-                    <resource>
-                        <directory>../ui/csv-extract-web-ui/build</directory>
-                    </resource>
-                </webResources>
-                <!-- <webXml>${basedir}/web.xml</webXml> -->
-            </configuration>
-  			</plugin> -->
-
-			<!-- <plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>webservice.Main</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin> -->
 		</plugins>
 	</build>
+	<dependencies>
+		<!-- JAX-RS -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>${jaxrs.version}</version>
+        </dependency>
+        <!-- Jersey 2.19 -->
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+            <version>${jersey2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey2.version}</version>
+        </dependency>
+		<!-- <dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.18.1</version>
+		</dependency>
+		<dependency>
+    		<groupId>com.sun.jersey</groupId>
+    		<artifactId>jersey-servlet</artifactId>
+    		<version>1.18.1</version>
+		</dependency> -->
+		<!-- <dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>6.0.44</version>
+		</dependency> -->
+	</dependencies>
 </project>
