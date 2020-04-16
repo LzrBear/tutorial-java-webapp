@@ -34,3 +34,7 @@ The war package can be easily deployed onto glassfish using the web ui.
 ## Other notes
 - pom.xml contains maven build configurations
 - web.xml contains how glassfish will host the service (this gets packaged into the war)
+
+# TODO 
+
+Currently no easy way to run a dev instance of the web service to debug. no embedded tomcat server or anything. work out how to do this (similair to how spring boot works)
