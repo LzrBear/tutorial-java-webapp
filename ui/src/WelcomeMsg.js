@@ -27,7 +27,7 @@ class WelcomeMsg extends React.Component {
 
         return (
             <div>
-                <h3>Welcome { this.state.username }</h3>
+                <p>Welcome { this.state.username }</p>
             </div>
         )
     };
