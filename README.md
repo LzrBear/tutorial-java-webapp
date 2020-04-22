@@ -9,29 +9,17 @@ The web service contains all the business logic and is built using JAX-RS and Je
 
 ## Build
 
-Uses maven for build
-
-To build ui
+To build run the build script
 ```
-cd ui
-mvn clean
-mvn compile
-mvn install
+./build.sh
 ```
 
-To build webservice
-```
-cd webservice
-mvn clean
-mvn compile
-mvn install
-```
+The generated war files will be placed in a directory called target.
 
-Note: once running the ```mvn install``` command a war package will be created in a folder named ```target```.
-
-The war package can be easily deployed onto glassfish using the glassfish admin web interface.
-
-## Other notes
+**Notes**:
+- Uses maven for build
+- Once running the ```mvn install``` command a war package will be created in a folder named ```target```.
+- The war package can be easily deployed onto glassfish using the glassfish admin web interface.
 - pom.xml contains maven build configurations
 - web.xml contains how glassfish will host the service (this gets packaged into the war)
 
