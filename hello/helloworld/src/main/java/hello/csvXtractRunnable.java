@@ -19,7 +19,10 @@ public class csvXtractRunnable implements Runnable {
 
     @Override
     public void run() {
-        while(keepRunning()) {
+
+        int rounds = 3;
+
+        while(keepRunning() && rounds > 0) {
 
             csvXtractRunning = true;
 
@@ -31,6 +34,8 @@ public class csvXtractRunnable implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            rounds--;
         }
 
         csvXtractRunning = false;

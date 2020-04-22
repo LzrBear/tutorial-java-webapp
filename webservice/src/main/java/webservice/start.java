@@ -15,11 +15,9 @@ public class start {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        String name = App.getName();
-        String response2 = "{\"name\": \"" + name + "\"}";
+        App.start();
 
 		return Response.ok()
-        .entity(response2)
         .header("Access-Control-Allow-Origin", "*")
         .build();
     }

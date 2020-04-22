@@ -15,8 +15,8 @@ public class getStatus {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        String name = App.getName();
-        String response2 = "{\"name\": \"" + name + "\"}";
+        String status = App.getStatus();
+        String response2 = "{\"status\": \"" + status + "\"}";
 
 		return Response.ok()
         .entity(response2)
