@@ -39,6 +39,20 @@ class Admin extends React.Component {
         //.then((data) => { this.setState({username: data.name}) } )
     }
 
+    tick() {
+        this.setState(state => ({
+          seconds: state.seconds + 1
+        }));
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(() => { this.setState({ time: Date.now() }); this.getStatus(); }, 1000);
+    }
+    
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     render() {
 
         if (typeof this.state.csvXtractStatus == 'undefined') {
@@ -47,6 +61,9 @@ class Admin extends React.Component {
 
         return (
             <div>
+                <div>
+                    Timer: {this.state.time}
+                </div>
                 <p>CSVXtract is currently { this.state.csvXtractStatus } on this server</p>
                 <button onClick={this.start}>
                     Start

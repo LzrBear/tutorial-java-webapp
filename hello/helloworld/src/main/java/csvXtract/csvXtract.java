@@ -1,4 +1,4 @@
-package hello;
+package csvXtract;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,7 +11,36 @@ import java.util.Scanner;
 
 public class csvXtract {
 
-    final static String fileName = "logs.txt";
+    private final static String fileName = "logs.txt";
+    private static boolean terminate = false;
+
+    public static void doWork() {
+
+        terminate = false;
+        csvXtract.writeLogs("Starting Work");
+        int rounds = 5;
+
+        while (rounds > 0 && !terminate) {
+            
+            System.out.println("Do something - rounds left: " + rounds);
+            csvXtract.writeLogs("Do something - rounds left: " + rounds);
+
+            try {
+                Thread.sleep(3L * 1000L);
+            } catch (InterruptedException e) {
+                System.out.println("FISH");
+                e.printStackTrace();
+            }
+
+            rounds--;
+        }
+
+        csvXtract.writeLogs("Completed Work");
+    }
+    
+    public static void terminate() {
+        terminate = true;
+    }
 
     public static String readLogs(){
 
