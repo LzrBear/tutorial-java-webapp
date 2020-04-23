@@ -6,7 +6,7 @@ package hello;
  */
 public class App 
 {
-    private static csvXtractRunnable csvXtract = new csvXtractRunnable();
+    private static csvXtractRunnable csvXtractThread = new csvXtractRunnable();
 
     public static void main( String[] args )
     {
@@ -17,21 +17,21 @@ public class App
 
         try {
             System.out.println("CSVXtract Status: " + getStatus());
-            Thread.sleep(1);
+            Thread.sleep(10);
             System.out.println("CSVXtract Status: " + getStatus());
-            Thread.sleep(1);
+            Thread.sleep(10);
             System.out.println("CSVXtract Status: " + getStatus());
-            Thread.sleep(1);
+            Thread.sleep(10);
             System.out.println("CSVXtract Status: " + getStatus());
-            Thread.sleep(1);
+            Thread.sleep(10);
             System.out.println("CSVXtract Status: " + getStatus());
-            Thread.sleep(1);
+            Thread.sleep(10);
             System.out.println("CSVXtract Status: " + getStatus());
-            Thread.sleep(1);
+            Thread.sleep(10);
             System.out.println("CSVXtract Status: " + getStatus());
-            Thread.sleep(1);
+            Thread.sleep(10);
             System.out.println("CSVXtract Status: " + getStatus());
-            Thread.sleep(1);
+            Thread.sleep(10);
 
             Thread.sleep(10L * 1000L);
 
@@ -48,13 +48,14 @@ public class App
     }
 
     public static String getName() {
-        return "Koala";
+        //return "Koala";
+        return System.getProperty("user.dir");
     }
 
     public static String getStatus() {
         String status = "Unknown";
 
-        if (csvXtract.isRunning()){
+        if (csvXtractThread.isRunning()){
             status = "Running";
         } else {
             status = "Stopped";
@@ -63,12 +64,16 @@ public class App
         return status;
     }
 
+    public static String getLogs() {
+        return csvXtract.readLogs();
+    }
+
     public static void stop() {
-        csvXtract.doStop();
+        csvXtractThread.doStop();
     }
 
     public static void start() {
-        Thread thread = new Thread(csvXtract);
+        Thread thread = new Thread(csvXtractThread);
 
         thread.start();
     }

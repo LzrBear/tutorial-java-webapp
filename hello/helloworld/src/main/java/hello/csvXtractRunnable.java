@@ -6,6 +6,7 @@ public class csvXtractRunnable implements Runnable {
     private boolean csvXtractRunning = false;
 
     public synchronized void doStop() {
+        csvXtractRunning = false;
         this.doStop = true;
     }
 
@@ -20,11 +21,15 @@ public class csvXtractRunnable implements Runnable {
     @Override
     public void run() {
 
+        doStop = false;
+        csvXtractRunning = true;
         int rounds = 3;
+
+        csvXtract.writeLogs("Starting");
 
         while(keepRunning() && rounds > 0) {
 
-            csvXtractRunning = true;
+            csvXtract.writeLogs("Running - rounds left: " + rounds);
 
             // keep doing what this thread should do.
             System.out.println("Running");
@@ -37,6 +42,8 @@ public class csvXtractRunnable implements Runnable {
 
             rounds--;
         }
+
+        csvXtract.writeLogs("Stopped");
 
         csvXtractRunning = false;
     }

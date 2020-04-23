@@ -10,15 +10,15 @@ class Logs extends React.Component {
         this.state = {
           data : null
         };
+
+        this.getLogs = this.getLogs.bind(this);
       }
 
     getLogs() {
         var url = rootURL + "/getLogs"
         fetch(url)
-        // .then(resp => resp.json())
-        // .then((data) => { this.setState({csvXtractStatus: data.status}) } )
-
-        //TODO: Somehow display the log data on the page
+        .then(resp => resp.json() )
+        .then((data) => { this.setState({logs: data.Logs}) } )
     }
 
     render() {
@@ -29,9 +29,9 @@ class Logs extends React.Component {
                 <button onClick={this.getLogs}>
                     Refresh
                 </button>
-                <p>
-                    TODO: Logs go here!
-                </p>
+                <div style={{ 'white-space': 'pre-wrap' }}>
+                    { this.state.logs } 
+                </div>
             </div>
         )
     };

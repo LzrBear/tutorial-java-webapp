@@ -10,6 +10,10 @@ class Admin extends React.Component {
         this.state = {
           data : null
         };
+
+        this.start = this.start.bind(this);
+        this.stop = this.stop.bind(this);
+
       }
 
     getStatus() {
@@ -22,14 +26,16 @@ class Admin extends React.Component {
     start() {
         var url = rootURL + "/start"
         fetch(url)
-        .then(resp => resp.json())
+        //.then(resp => { debugger; resp.json() })
+        .then(() => { setTimeout(() => { this.getStatus()}, 1000)})
         //.then((data) => { this.setState({username: data.name}) } )
     }
 
     stop() {
         var url = rootURL + "/stop"
         fetch(url)
-        .then(resp => resp.json())
+        //.then(resp => resp.json())
+        .then(() => { setTimeout(() => { this.getStatus()}, 1000)})
         //.then((data) => { this.setState({username: data.name}) } )
     }
 

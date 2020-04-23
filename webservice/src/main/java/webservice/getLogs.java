@@ -15,8 +15,8 @@ public class getLogs {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        String name = App.getName();
-        String response2 = "{\"name\": \"" + name + "\"}";
+        String Logs = App.getLogs();
+        String response2 = "{\"Logs\": \"" + Logs + "\"}";
 
 		return Response.ok()
         .entity(response2)
