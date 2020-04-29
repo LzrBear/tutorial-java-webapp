@@ -17,6 +17,13 @@ mvn exec:java
 ```
 To test if running go to the url http://localhost:1337/CSVXtract-WS/rest/getStatus, you should see a json response with the status.
 
+### UI
+The following commands will start a development environment. Note once running all changes made to the front end files will automatically be refelected in the running development instance.
+```
+cd ui
+npm start
+````
+
 ## Build
 
 To build run the build script
