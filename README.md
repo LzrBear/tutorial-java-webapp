@@ -7,6 +7,16 @@ The UI is built in react and calls the webservice to conduct business logic and 
 The web service contains all the business logic and is built using JAX-RS and Jersey.
 
 
+## Run in Debug
+
+### Webservice
+The following commands should start a local grizzly http server with the webservice project. 
+```
+cd webservice
+mvn exec:java
+```
+To test if running go to the url http://localhost:1337/CSVXtract-WS/rest/getStatus, you should see a json response with the status.
+
 ## Build
 
 To build run the build script
