@@ -21,8 +21,11 @@ To test if running go to the url http://localhost:1337/CSVXtract-WS/rest/getStat
 The following commands will start a development environment. Note once running all changes made to the front end files will automatically be refelected in the running development instance.
 ```
 cd ui
+npm install
 npm start
 ````
+
+n.b. you only need to run npm install when your local copy is missing the node_modules dependancies.
 
 ## Build
 
