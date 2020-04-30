@@ -1,4 +1,6 @@
-# Tutorial Java WebApp
+# CSVXtract Web Application
+
+*A web interface for CSVXtract *
 
 Basically it is split into 2 components. The UI and the Webservice.
 
