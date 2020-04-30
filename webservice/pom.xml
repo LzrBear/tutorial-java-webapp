@@ -30,7 +30,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>webservice.Main</mainClass>
+                    <mainClass>DevelopmentHttpServer</mainClass>
                 </configuration>
             </plugin>
 		</plugins>
