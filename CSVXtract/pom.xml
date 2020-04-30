@@ -73,11 +73,11 @@
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
           <configuration>
-              <groupId>org.somegroup</groupId>
-              <artifactId>someartifact</artifactId>
-              <version>1.0</version>
+              <groupId>${groupId}</groupId>
+              <artifactId>${artifactId}</artifactId>
+              <version>${version}</version>
               <packaging>jar</packaging>
-              <file>${basedir}/target/helloworld-1.0-SNAPSHOT.jar</file>
+              <file>${basedir}/target/${artifactId}-${version}.jar</file> 
               <generatePom>true</generatePom>
           </configuration>
           <executions>

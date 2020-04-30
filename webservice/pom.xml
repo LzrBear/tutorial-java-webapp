@@ -68,29 +68,11 @@
         </dependency>
 
 
-        <!-- My Hello World App -->
+        <!-- CSVXtract -->
         <dependency>
-            <groupId>org.somegroup</groupId>
-            <artifactId>someartifact</artifactId>
-            <version>1.0</version>
+            <groupId>CSVXtract</groupId>
+            <artifactId>CSVXtract</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
-
-
-
-		<!-- <dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.18.1</version>
-		</dependency>
-		<dependency>
-    		<groupId>com.sun.jersey</groupId>
-    		<artifactId>jersey-servlet</artifactId>
-    		<version>1.18.1</version>
-		</dependency> -->
-		<!-- <dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>6.0.44</version>
-		</dependency> -->
 	</dependencies>
 </project>
