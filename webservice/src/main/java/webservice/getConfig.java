@@ -8,18 +8,18 @@ import javax.ws.rs.core.Response;
 
 import CSVXtract.csvXtractThread;
 
-@Path("/getStatus")
-public class getStatus {
+@Path("/getConfig")
+public class getConfig {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        String status = csvXtractThread.getStatus();
-        String response2 = "{\"status\": \"" + status + "\"}";
+        //String Logs = App.getLogs();
+        //String response2 = "{\"Logs\": \"" + Logs + "\"}";
 
 		return Response.ok()
-        .entity(response2)
+        //.entity(response2)
         .header("Access-Control-Allow-Origin", "*")
         .build();
     }

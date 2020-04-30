@@ -14,8 +14,7 @@ class Admin extends React.Component {
 
         this.start = this.start.bind(this);
         this.stop = this.stop.bind(this);
-
-      }
+    }
 
     getStatus() {
         var url = rootURL + "/getStatus"

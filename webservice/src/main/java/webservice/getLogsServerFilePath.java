@@ -8,15 +8,15 @@ import javax.ws.rs.core.Response;
 
 import CSVXtract.csvXtractThread;
 
-@Path("/getStatus")
-public class getStatus {
+@Path("/getLogsServerFilePath")
+public class getLogsServerFilePath {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        String status = csvXtractThread.getStatus();
-        String response2 = "{\"status\": \"" + status + "\"}";
+        String LogsServerFilePath = csvXtractThread.getLogPath();
+        String response2 = "{\"LogsServerFilePath\": \"" + LogsServerFilePath + "\"}";
 
 		return Response.ok()
         .entity(response2)

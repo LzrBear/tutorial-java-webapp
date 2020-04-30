@@ -1,6 +1,12 @@
-package csvXtract;
+package CSVXtract;
 
-public class csvXtractRunnable implements Runnable {
+import csvXtract.csvXtract;
+
+class csvXtractRunnable implements Runnable {
+
+    public String getLogPath() {
+        return csvXtract.getLogPath();
+    }
 
     public String getLogs() {
         return csvXtract.readLogs();

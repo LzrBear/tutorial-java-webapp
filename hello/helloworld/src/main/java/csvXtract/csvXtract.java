@@ -42,6 +42,10 @@ public class csvXtract {
         terminate = true;
     }
 
+    public static String getLogPath() {
+        return System.getProperty("user.dir");
+    }
+
     public static String readLogs(){
 
         String log = "";

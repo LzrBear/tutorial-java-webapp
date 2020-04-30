@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import hello.App; //my helloworld application
+import CSVXtract.csvXtractThread;
 
 @Path("/stop")
 public class stop {
@@ -15,7 +15,7 @@ public class stop {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        App.stop();
+        csvXtractThread.stop();
         
 		return Response.ok()
         .header("Access-Control-Allow-Origin", "*")
