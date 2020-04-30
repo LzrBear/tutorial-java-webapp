@@ -8,10 +8,11 @@ import javax.ws.rs.core.Response;
 
 import CSVXtract.csvXtractExecutor;
 
-@Path("/getCSVXtractWorkingDirectory")
-public class getCSVXtractWorkingDirectory {
+@Path("/Tools")
+public class Tools {
     
     @GET
+    @Path("/GET/CSVXtractWorkingDirectory")
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 

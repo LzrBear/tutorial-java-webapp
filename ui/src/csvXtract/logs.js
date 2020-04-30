@@ -23,7 +23,7 @@ class Logs extends React.Component {
     }
 
     getLogsServerFilePath() {
-        var url = rootURL + "/getCSVXtractWorkingDirectory"
+        var url = rootURL + "/Tools/GET/CSVXtractWorkingDirectory"
         fetch(url)
         .then(resp => resp.json() )
         .then((data) => { this.setState({LogsServerFilePath: data.CSVXtractWorkingDirectory}) } )
