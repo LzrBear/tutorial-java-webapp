@@ -27,9 +27,8 @@ class Config extends React.Component {
         
         // Update the formData object 
         formData.append( 
-            "configurationPropertiesFile", 
-            this.state.selectedFile, 
-            this.state.selectedFile.name 
+             "file", 
+             this.state.selectedFile
         ); 
         
         // Details of the uploaded file 
@@ -37,8 +36,6 @@ class Config extends React.Component {
         
         // Request made to the backend api 
         // Send formData object 
-        //axios.post("api/uploadfile", formData); 
-
         var url = rootURL + "/Config/Upload"
         fetch(url, {
             method: 'post',

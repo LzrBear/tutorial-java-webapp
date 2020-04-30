@@ -26,8 +26,7 @@ public class Config {
     @POST
     @Path("/Upload")
     @Consumes({MediaType.MULTIPART_FORM_DATA})
-    public Response upload(  @FormDataParam("file") InputStream fileInputStream,
-                                    @FormDataParam("file") FormDataContentDisposition fileMetaData) throws Exception
+    public Response upload(  @FormDataParam("file") InputStream fileInputStream) throws Exception
     {
         String UPLOAD_PATH = csvXtractExecutor.getCSVXtractWorkingDirectory();
         try
@@ -35,20 +34,21 @@ public class Config {
             int read = 0;
             byte[] bytes = new byte[1024];
      
-            OutputStream out = new FileOutputStream(new File(UPLOAD_PATH + fileMetaData.getFileName()));
+            String filePath = UPLOAD_PATH + "/configuration.properties";
+            File confFile = new File(filePath);
+            OutputStream out = new FileOutputStream(confFile);
             while ((read = fileInputStream.read(bytes)) != -1) 
             {
                 out.write(bytes, 0, read);
             }
             out.flush();
             out.close();
-        } catch (IOException e) 
-        {
+            
+        } catch (IOException e) {
             throw new WebApplicationException("Error while uploading configuration file. Please try again.");
         }
         return Response.ok("Configuration file uploaded successfully.").build();
     }
-
 
     @GET
     @Path("/Download")
