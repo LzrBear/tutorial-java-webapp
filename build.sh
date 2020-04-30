@@ -2,11 +2,11 @@
 rm -rf target/
 mkdir target
 
-echo "Building HelloWorld"
-cd hello/helloworld
+echo "Building CSVXtract"
+cd CSVXtract
 mvn clean install
 echo "Done"
-cd ../..
+cd ..
 
 echo "Building Web Service"
 cd webservice

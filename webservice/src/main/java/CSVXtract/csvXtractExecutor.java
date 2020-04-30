@@ -6,7 +6,6 @@ public class csvXtractExecutor {
     private static Thread thread; // = new Thread(csvXtractThread);
 
     public static String getLogPath() {
-        //return "Koala";
         return csvXtractThread.getLogPath();
     }
 
