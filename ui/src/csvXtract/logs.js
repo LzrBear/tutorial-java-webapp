@@ -16,17 +16,17 @@ class Logs extends React.Component {
       }
 
     getLogs() {
-        var url = rootURL + "/getLogs"
+        var url = rootURL + "/Logs/Get"
         fetch(url)
         .then(resp => resp.json() )
         .then((data) => { this.setState({logs: data.Logs}) } )
     }
 
     getLogsServerFilePath() {
-        var url = rootURL + "/getLogsServerFilePath"
+        var url = rootURL + "/getCSVXtractWorkingDirectory"
         fetch(url)
         .then(resp => resp.json() )
-        .then((data) => { this.setState({LogsServerFilePath: data.LogsServerFilePath}) } )
+        .then((data) => { this.setState({LogsServerFilePath: data.CSVXtractWorkingDirectory}) } )
     }
 
     render() {

@@ -17,14 +17,14 @@ class Admin extends React.Component {
     }
 
     getStatus() {
-        var url = rootURL + "/getStatus"
+        var url = rootURL + "/Admin/Status"
         fetch(url)
         .then(resp => resp.json())
         .then((data) => { this.setState({csvXtractStatus: data.status}) } )
     }
 
     start() {
-        var url = rootURL + "/start"
+        var url = rootURL + "/Admin/Start"
         fetch(url)
         //.then(resp => { debugger; resp.json() })
         .then(() => { setTimeout(() => { this.getStatus()}, 1000)})
@@ -32,7 +32,7 @@ class Admin extends React.Component {
     }
 
     stop() {
-        var url = rootURL + "/stop"
+        var url = rootURL + "/Admin/Stop"
         fetch(url)
         //.then(resp => resp.json())
         .then(() => { setTimeout(() => { this.getStatus()}, 1000)})

@@ -7,6 +7,7 @@ import './index.css';
 import WelcomeMsg from './WelcomeMsg';
 import Admin from './csvXtract/admin';
 import Logs from './csvXtract/logs';
+import Config from './csvXtract/config';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
     <h1>CSVXtract Admin</h1>
     <WelcomeMsg/>
     <Admin/>
+    <Config/>
     <Logs/>
   </React.StrictMode>,
   document.getElementById('root')

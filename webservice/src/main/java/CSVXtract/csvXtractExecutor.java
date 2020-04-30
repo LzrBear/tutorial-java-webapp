@@ -5,8 +5,8 @@ public class csvXtractExecutor {
     private static csvXtractRunnable csvXtractThread = new csvXtractRunnable();
     private static Thread thread; // = new Thread(csvXtractThread);
 
-    public static String getLogPath() {
-        return csvXtractThread.getLogPath();
+    public static String getCSVXtractWorkingDirectory() {
+        return csvXtractThread.getCSVXtractWorkingDirectory();
     }
 
     public static String getStatus() {

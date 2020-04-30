@@ -42,7 +42,7 @@ public class csvXtract {
         terminate = true;
     }
 
-    public static String getLogPath() {
+    public static String getCSVXtractWorkingDirectory() {
         return System.getProperty("user.dir");
     }
 

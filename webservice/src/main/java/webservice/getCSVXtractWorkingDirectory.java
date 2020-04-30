@@ -8,15 +8,15 @@ import javax.ws.rs.core.Response;
 
 import CSVXtract.csvXtractExecutor;
 
-@Path("/getLogsServerFilePath")
-public class getLogsServerFilePath {
+@Path("/getCSVXtractWorkingDirectory")
+public class getCSVXtractWorkingDirectory {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        String LogsServerFilePath = csvXtractExecutor.getLogPath();
-        String response2 = "{\"LogsServerFilePath\": \"" + LogsServerFilePath + "\"}";
+        String CSVXtractWorkingDirectory = csvXtractExecutor.getCSVXtractWorkingDirectory();
+        String response2 = "{\"CSVXtractWorkingDirectory\": \"" + CSVXtractWorkingDirectory + "\"}";
 
 		return Response.ok()
         .entity(response2)

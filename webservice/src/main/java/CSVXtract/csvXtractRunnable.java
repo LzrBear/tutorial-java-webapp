@@ -4,8 +4,8 @@ import csvXtract.csvXtract;
 
 class csvXtractRunnable implements Runnable {
 
-    public String getLogPath() {
-        return csvXtract.getLogPath();
+    public String getCSVXtractWorkingDirectory() {
+        return csvXtract.getCSVXtractWorkingDirectory();
     }
 
     public String getLogs() {
