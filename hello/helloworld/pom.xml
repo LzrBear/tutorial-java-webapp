@@ -58,7 +58,7 @@
                 <addClasspath>true</addClasspath>
                 <classpathPrefix>libs/</classpathPrefix>
                 <mainClass>
-                  hello.App
+                  csvXtract
                 </mainClass>
               </manifest>
             </archive>
