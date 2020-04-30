@@ -1,6 +1,6 @@
 package CSVXtract;
 
-public class csvXtractThread {
+public class csvXtractExecutor {
 
     private static csvXtractRunnable csvXtractThread = new csvXtractRunnable();
     private static Thread thread; // = new Thread(csvXtractThread);

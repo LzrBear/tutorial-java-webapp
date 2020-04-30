@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import CSVXtract.csvXtractThread;
+import CSVXtract.csvXtractExecutor;
 
 @Path("/getStatus")
 public class getStatus {
@@ -15,7 +15,7 @@ public class getStatus {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        String status = csvXtractThread.getStatus();
+        String status = csvXtractExecutor.getStatus();
         String response2 = "{\"status\": \"" + status + "\"}";
 
 		return Response.ok()

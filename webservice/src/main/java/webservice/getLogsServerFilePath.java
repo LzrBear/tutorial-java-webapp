@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import CSVXtract.csvXtractThread;
+import CSVXtract.csvXtractExecutor;
 
 @Path("/getLogsServerFilePath")
 public class getLogsServerFilePath {
@@ -15,7 +15,7 @@ public class getLogsServerFilePath {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        String LogsServerFilePath = csvXtractThread.getLogPath();
+        String LogsServerFilePath = csvXtractExecutor.getLogPath();
         String response2 = "{\"LogsServerFilePath\": \"" + LogsServerFilePath + "\"}";
 
 		return Response.ok()

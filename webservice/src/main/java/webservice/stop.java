@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import CSVXtract.csvXtractThread;
+import CSVXtract.csvXtractExecutor;
 
 @Path("/stop")
 public class stop {
@@ -15,7 +15,7 @@ public class stop {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        csvXtractThread.stop();
+        csvXtractExecutor.stop();
         
 		return Response.ok()
         .header("Access-Control-Allow-Origin", "*")

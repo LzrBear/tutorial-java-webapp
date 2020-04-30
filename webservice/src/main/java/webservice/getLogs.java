@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import CSVXtract.csvXtractThread;
+import CSVXtract.csvXtractExecutor;
 
 @Path("/getLogs")
 public class getLogs {
@@ -15,7 +15,7 @@ public class getLogs {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
 
-        String Logs = csvXtractThread.getLogs();
+        String Logs = csvXtractExecutor.getLogs();
         String response2 = "{\"Logs\": \"" + Logs + "\"}";
 
 		return Response.ok()
